@@ -23,27 +23,25 @@ export default class App extends Component<Props> {
     super(props)
     this.state = {escolhaUser: '', escolhaComp: '', result:''}
   }
-  jokenpo(escolhaUser){
-    this.setState({escolhaUser: escolhaUser})
-
+  jokenpo = (escolhaUser)=>{
+ 
     let acoes = ['pedra', 'papel', 'tesoura']
-    this.setState({escolhaComp: acoes[Math.floor(Math.random() * 3)]})
+    let comp = acoes[Math.floor(Math.random() * 3)];
     
     let resultado ;
     
-    if(this.state.escolhaUser == 'pedra' && this.state.escolhaComp == 'tesoura'){
+    if( escolhaUser == 'pedra' && comp == 'tesoura'){
       resultado =  'Usuario venceu'
-    }else if(this.state.escolhaUser == 'tesoura' && this.state.escolhaComp == 'papel'){
+    }else if( escolhaUser == 'tesoura' && comp == 'papel'){
       resultado = 'Usuario venceu'
-    }else if(this.state.escolhaUser == 'papel' && this.state.escolhaComp == 'pedra'){
+    }else if( escolhaUser == 'papel' && comp == 'pedra'){
       resultado = 'Usuario venceu'
-    }else if(this.state.escolhaUser == this.state.escolhaComp){
+    }else if( escolhaUser == comp){
       resultado = 'empataram'
     }else{
       resultado = 'Computador Venceu'
     }
-    //resultado = this.state.escolhaUser == this.state.escolhaComp ? 'empatou': ''
-    this.setState({result: resultado})
+    this.setState({result: resultado, escolhaUser: escolhaUser, escolhaComp: comp })
     
   }
   render() {
