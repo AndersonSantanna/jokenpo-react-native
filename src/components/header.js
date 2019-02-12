@@ -6,7 +6,7 @@ class header extends Component{
     render(){
         return(
             <View>
-                <Image source={require('./jokenpo.png')}/>
+                <Image source={require('../../jokenpo.png')}/>
             </View>
         )
     }
